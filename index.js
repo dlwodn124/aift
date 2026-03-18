@@ -15,7 +15,7 @@ const pool = new Pool({
 app.get('/', async (req, res) => {
   try {
     // 'test' 테이블에서 이름이 '홍길동'인 레코드 1개를 조회하는 쿼리
-    const result = await pool.query("SELECT name FROM test WHERE name = '홍길동' LIMIT 1");
+    const result = await pool.query("SELECT name FROM test LIMIT 1");
     
     if (result.rows.length > 0) {
       const userName = result.rows[0].name;
